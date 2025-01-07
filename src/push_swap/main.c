@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fvon-der <fvon-der@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: fvon-der <fvon-der@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 19:49:37 by fvon-der          #+#    #+#             */
-/*   Updated: 2024/08/07 04:19:00 by fvon-der         ###   ########.fr       */
+/*   Updated: 2025/01/07 14:18:32 by fvon-der         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int argc, char **argv)
 		ft_free(&a);
 		print_exit("Allocation failed, main", 1);
 	}
-	 if (is_duplicate(a))
+	if (is_duplicate(a))
 	{
 		ft_free(&a);
 		print_exit("Duplicates", 1);

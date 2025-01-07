@@ -6,7 +6,7 @@
 #    By: fvon-der <fvon-der@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/27 22:07:42 by fvon-der          #+#    #+#              #
-#    Updated: 2025/01/07 13:17:14 by fvon-der         ###   ########.fr        #
+#    Updated: 2025/01/07 14:18:04 by fvon-der         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,13 +50,24 @@ LIBRARIES   = -L$(LIBFT_DIR) -L$(PRINTF_DIR) -lftprintf -lft
 SRC			= $(SRC_DIR)/main.c \
 			$(SRC_DIR)/input.c \
 			$(SRC_DIR)/list_validation.c \
-			$(SRC_DIR)/list_uils.c \
+			$(SRC_DIR)/list_utils.c \
 			$(SRC_DIR)/list_utils_add.c \
 			$(SRC_DIR)/utils_error.c \
+			$(SRC_DIR)/calc_steps.c \
+			$(SRC_DIR)/calc_steps_add.c \
+			$(SRC_DIR)/finder.c \
+			$(SRC_DIR)/libft_add.c \
+			$(SRC_DIR)/operations.c \
+			$(SRC_DIR)/operations_add.c \
+			$(SRC_DIR)/operations_add_2.c \
+			$(SRC_DIR)/rotate_type.c \
+			$(SRC_DIR)/rotation_func.c \
+			$(SRC_DIR)/sorter.c \
+			$(SRC_DIR)/sorter_add.c
 			
 OBJ			= $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC))
 
-SRC_BONUS   = $(wildcard $(SRC_BONUS_DIR)/*.c)
+SRC_BONUS   = $(SRC_BONUS_DIR)/checker.c)
 OBJ_BONUS   = $(patsubst $(SRC_BONUS_DIR)/%.c,$(OBJ_BONUS_DIR)/%.o,$(SRC_BONUS))
 
 # Exclude push_swap.o from bonus object files

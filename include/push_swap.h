@@ -6,7 +6,7 @@
 /*   By: fvon-der <fvon-der@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 23:59:30 by fvon-der          #+#    #+#             */
-/*   Updated: 2025/01/07 14:52:37 by fvon-der         ###   ########.fr       */
+/*   Updated: 2025/01/07 14:57:06 by fvon-der         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,17 @@ int			ft_exec_rarb(t_list **a, t_list **b, int c, char s);
 int			ft_exec_rrarrb(t_list **a, t_list **b, int c, char s);
 int			ft_exec_rrarb(t_list **a, t_list **b, int c, char s);
 int			ft_exec_rarrb(t_list **a, t_list **b, int c, char s);
+
+// Calc steps
+int			ft_calc_rarb_a(t_list *a, t_list *b, int c);
+int			ft_calc_rrarrb_a(t_list *a, t_list *b, int c);
+int			ft_calc_rarrb_a(t_list *a, t_list *b, int c);
+int			ft_calc_rrarb_a(t_list *a, t_list *b, int c);
+int			ft_calc_rarb(t_list *a, t_list *b, int c);
+// Calc steps add
+int			ft_calc_rrarrb(t_list *a, t_list *b, int c);
+int			ft_calc_rrarb(t_list *a, t_list *b, int c);
+int			ft_calc_rarrb(t_list *a, t_list *b, int c);
 
 // LIBFT add
 int			ft_issign(int c);

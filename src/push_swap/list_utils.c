@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fvon-de <fvon-der@student.42heilbronn.d    +#+  +:+       +#+        */
+/*   By: fvon-der <fvon-der@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 01:54:01 by fvon-de           #+#    #+#             */
-/*   Updated: 2024/11/03 01:54:16 by fvon-de          ###   ########.fr       */
+/*   Updated: 2025/01/07 13:04:08 by fvon-der         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	list_args(char **argv, t_list **stack_a)
 		i++;
 	}
 }
-
 
 t_list	*ft_lstnew_int(int value)
 {
