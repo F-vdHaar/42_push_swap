@@ -6,18 +6,13 @@
 /*   By: fvon-der <fvon-der@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 23:59:30 by fvon-der          #+#    #+#             */
-/*   Updated: 2025/01/07 14:21:24 by fvon-der         ###   ########.fr       */
+/*   Updated: 2025/01/07 14:49:33 by fvon-der         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <unistd.h>
-# include <stddef.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <stdbool.h>
 # include "libft.h"
 # include "ft_printf.h"
 # include "get_next_line.h"
@@ -34,8 +29,33 @@ int			is_sorted(t_list *stack_a);
 int			is_duplicate(t_list *a);
 //Error utils
 void		print_exit(char *message, int mode);
-// sorter
+// Sorter
 void		ft_sort(t_list **stack_a);
+void		ft_sort_big(t_list **stack_a, t_list **stack_b);
+void		ft_sort_min(t_list **stack_a);
+
+// Finders
+int			ft_min(t_list *a);
+int			ft_max(t_list *a);
+int			ft_find_index(t_list *a, int nbr);
+int			ft_find_place_b(t_list *stack_b, int nbr_push);
+int			ft_find_place_a(t_list *a, int nbr);
+
+// Operations Add
+void		ft_ra(t_list **a, int j);
+void		ft_rb(t_list **b, int j);
+void		ft_sa(t_list **a, int j);
+void		ft_pa(t_list **a, t_list **b, int j);
+void		ft_pb(t_list **stack_a, t_list **stack_b, int j);
+// Operations Add
+void		ft_rra(t_list **a, int j);
+void		ft_ss(t_list **a, t_list **b, int j);
+void		ft_rr(t_list **a, t_list **b, int j);
+void		ft_rrr(t_list **a, t_list **b, int j);
+// Operations Add 2
+void		ft_rrb(t_list **b, int j);
+void		ft_sb(t_list **b, int j);
+
 // LIBFT add
 int			ft_issign(int c);
 int			ft_isspace(int c);
