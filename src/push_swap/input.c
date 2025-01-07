@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fvon-de <fvon-der@student.42heilbronn.d    +#+  +:+       +#+        */
+/*   By: fvon-der <fvon-der@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 01:53:07 by fvon-de           #+#    #+#             */
-/*   Updated: 2024/11/03 01:53:15 by fvon-de          ###   ########.fr       */
+/*   Updated: 2025/01/07 17:38:41 by fvon-der         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,3 @@ t_list	*ft_process_input(int argc, char **argv)
 	}
 	return (a);
 }
-

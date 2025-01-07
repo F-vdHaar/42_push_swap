@@ -6,7 +6,7 @@
 /*   By: fvon-der <fvon-der@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 01:54:01 by fvon-de           #+#    #+#             */
-/*   Updated: 2025/01/07 13:04:08 by fvon-der         ###   ########.fr       */
+/*   Updated: 2025/01/07 17:39:01 by fvon-der         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,3 @@ t_list	*ft_lstnew_int(int value)
 	new->next = NULL;
 	return (new);
 }
-
