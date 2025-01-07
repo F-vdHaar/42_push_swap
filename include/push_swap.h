@@ -6,7 +6,7 @@
 /*   By: fvon-der <fvon-der@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 23:59:30 by fvon-der          #+#    #+#             */
-/*   Updated: 2025/01/07 14:49:33 by fvon-der         ###   ########.fr       */
+/*   Updated: 2025/01/07 14:52:37 by fvon-der         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,15 @@ void		ft_rrr(t_list **a, t_list **b, int j);
 // Operations Add 2
 void		ft_rrb(t_list **b, int j);
 void		ft_sb(t_list **b, int j);
+
+// type rotation
+int			ft_calc_rotate_ab(t_list *a, t_list *b);
+int			ft_calc_rotate_ba(t_list *a, t_list *b);
+// rotation func
+int			ft_exec_rarb(t_list **a, t_list **b, int c, char s);
+int			ft_exec_rrarrb(t_list **a, t_list **b, int c, char s);
+int			ft_exec_rrarb(t_list **a, t_list **b, int c, char s);
+int			ft_exec_rarrb(t_list **a, t_list **b, int c, char s);
 
 // LIBFT add
 int			ft_issign(int c);
