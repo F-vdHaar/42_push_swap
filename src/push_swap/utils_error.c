@@ -6,7 +6,7 @@
 /*   By: fvon-der <fvon-der@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 01:42:48 by fvon-de           #+#    #+#             */
-/*   Updated: 2025/01/07 17:37:46 by fvon-der         ###   ########.fr       */
+/*   Updated: 2025/01/11 21:13:26 by fvon-der         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	print_exit(char *message, int mode)
 	}
 	else if (mode == 1)
 	{
-		ft_printf("\nError: %s\n", message);
+		write(2, "Error\n", 7);
 		exit(EXIT_FAILURE);
 	}
 }

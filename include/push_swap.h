@@ -6,16 +6,16 @@
 /*   By: fvon-der <fvon-der@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 23:59:30 by fvon-der          #+#    #+#             */
-/*   Updated: 2025/01/07 14:57:06 by fvon-der         ###   ########.fr       */
+/*   Updated: 2025/01/11 18:46:43 by fvon-der         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# include "get_next_line.h"
 # include "libft.h"
 # include "ft_printf.h"
-# include "get_next_line.h"
 
 // Input 
 t_list		*ft_process_input(int argc, char **argv);

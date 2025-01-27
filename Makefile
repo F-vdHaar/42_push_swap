@@ -6,7 +6,7 @@
 #    By: fvon-der <fvon-der@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/27 22:07:42 by fvon-der          #+#    #+#              #
-#    Updated: 2025/01/07 14:18:04 by fvon-der         ###   ########.fr        #
+#    Updated: 2025/01/11 19:08:17 by fvon-der         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,21 +30,18 @@ CYAN		= \033[1;36m
 RESET		= \033[0m
 
 # Directories
-OBJ_DIR     = obj/push_swap
+OBJ_DIR		= obj/push_swap
 OBJ_BONUS_DIR = obj/checker
-SRC_DIR     = src/push_swap
+SRC_DIR		= src/push_swap
 SRC_BONUS_DIR = src/checker
-LIBFT_DIR   = lib/libft
-GNL_DIR     = lib/gnl
-GNL_OBJ_DIR = $(GNL_DIR)/obj
+LIBFT_DIR	= lib/libft
+GNL_DIR		= lib/gnl
 PRINTF_DIR = lib/ft_printf
 INCLUDE_DIR = include
 
-GNL_OBJ_DIR = $(GNL_DIR)/obj
-
 # Include paths for libraries and headers
-INCLUDE     = -I$(INCLUDE_DIR)  -I$(PRINTF_DIR)/include -I$(LIBFT_DIR)/include -I$(GNL_DIR)/include
-LIBRARIES   = -L$(LIBFT_DIR) -L$(PRINTF_DIR) -lftprintf -lft
+INCLUDE		= -I$(INCLUDE_DIR)  -I$(PRINTF_DIR)/include -I$(LIBFT_DIR)/include -I$(GNL_DIR)/include
+LIBRARIES	= -L$(LIBFT_DIR) -L$(PRINTF_DIR) -L$(GNL_DIR) -lftprintf -lft -lgnl
 
 # Source and Object files
 SRC			= $(SRC_DIR)/main.c \
@@ -65,22 +62,18 @@ SRC			= $(SRC_DIR)/main.c \
 			$(SRC_DIR)/sorter.c \
 			$(SRC_DIR)/sorter_add.c
 			
-OBJ			= $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC))
 
-SRC_BONUS   = $(SRC_BONUS_DIR)/checker.c)
-OBJ_BONUS   = $(patsubst $(SRC_BONUS_DIR)/%.c,$(OBJ_BONUS_DIR)/%.o,$(SRC_BONUS))
+SRC_BONUS	= $(SRC_BONUS_DIR)/checker.c
+OBJ			= $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+OBJ_BONUS	= $(SRC_BONUS:$(SRC_BONUS_DIR)/%.c=$(OBJ_BONUS_DIR)/%.o)
+# Exclude push_swap main.o from bonus object files
+ADD_OBJS	= $(filter-out $(OBJ_DIR)/main.o, $(OBJ))
 
-# Exclude push_swap.o from bonus object files
-ADD_OBJS    = $(filter-out $(OBJ_DIR)/main.o, $(OBJ))
-
-# GNL object files
-GNL_SRC = $(wildcard $(GNL_DIR)/src/*.c) 
-GNL_OBJS = $(patsubst $(GNL_DIR)/src/%.c,$(GNL_OBJ_DIR)/%.o,$(GNL_SRC))
 
 # Leak checking
-LEAKS = valgrind
-LEAKS_FILE = valgrind-out.txt
-LF = --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=$(LEAKS_FILE) ./$(NAME) 69 6 3 89 67  -7 9 
+LEAKS 		= valgrind
+LEAKS_FILE	= valgrind-out.txt
+LF 			= --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=$(LEAKS_FILE) ./$(NAME) 69 6 3 89 67  -7 9 
 
 
 # Targets
@@ -99,11 +92,8 @@ $(OBJ_BONUS_DIR):
 	@echo "Creating directory: $(OBJ_BONUS_DIR)"
 	@mkdir -p $(OBJ_BONUS_DIR)
 
-$(GNL_OBJ_DIR):
-	@echo "$(CYAN)Checking for  GNL objects..$(RESET)"
-	@$(MAKE) -C $(GNL_DIR)
 
-# Ensure libft.a is built if it doesn't exist
+# Ensure libs are built if they doesn't exist
 $(LIBFT_DIR)/libft.a:
 	@echo "$(CYAN)Checking for libft library...$(RESET)"
 	@$(MAKE) -C $(LIBFT_DIR)
@@ -111,23 +101,25 @@ $(LIBFT_DIR)/libft.a:
 $(PRINTF_DIR)/libftprintf.a: $(LIBFT_DIR)/libft.a
 	@echo "$(CYAN)Checking for ft_printf library...$(RESET)"
 	@$(MAKE) -C $(PRINTF_DIR)
+	
+$(GNL_DIR)/libgnl.a:
+	@echo "$(CYAN)Checking for GNL library...$(RESET)"
+	@$(MAKE) -C $(GNL_DIR)
 
 
 # Build object files for main project
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR) $(LIBFT_DIR)/libft.a $(GNL_OBJ_DIR) $(PRINTF_DIR)/libftprintf.a
-	@echo "Compiling push_swap object: $<"
+	@echo "$(YELLOW)$(NAME): Compiling $< into $@...$(RESET)"
 	@$(CC) $(FLAGS) $(INCLUDE) -c $< -o $@
-	@echo "Object file created: $@"
 
 # Build object files for bonus
 $(OBJ_BONUS_DIR)/%.o: $(SRC_BONUS_DIR)/%.c | $(OBJ_BONUS_DIR) $(LIBFT_DIR)/libft.a $(GNL_OBJ_DIR) $(PRINTF_DIR)/libftprintf.a
-	@echo "Compiling checker object: $<"
+	@echo "$(YELLOW)$(BONUS): Compiling $< into $@...$(RESET)"
 	@$(CC) $(FLAGS) $(INCLUDE) -c $< -o $@
-	@echo "Object file created: $@"
 
 # Build the main executable
 $(NAME): $(OBJ) $(LIBFT_DIR)/libft.a $(PRINTF_DIR)/libftprintf.a 
-	@echo "Linking $(NAME) with libft.a, libftprintf.a "
+	@echo "Linking $(NAME) with $(LIBRARIES)"
 	@$(CC) $(FLAGS) $(OBJ) -o $(NAME) $(INCLUDE) $(LIBRARIES)
 	@echo "$(NAME) built successfully."
 
@@ -138,8 +130,8 @@ $(BONUS): $(OBJ_BONUS) $(ADD_OBJS) $(LIBFT_DIR)/libft.a $(PRINTF_DIR)/libftprint
 	@echo "$(BONUS) built successfully."
 
 leaks:
-	$(MAKE) debug
-	$(LEAKS) $(LF)
+	@$(MAKE) debug
+	@$(LEAKS) $(LF)
 	@echo "$(GREEN)Leaks log : $(LEAKS_FILE) $(RESET)\n\n"
 
 cleanleaks:
