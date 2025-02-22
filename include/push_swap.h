@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fvon-der <fvon-der@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fvon-de <fvon-der@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 23:59:30 by fvon-der          #+#    #+#             */
-/*   Updated: 2025/01/11 18:46:43 by fvon-der         ###   ########.fr       */
+/*   Updated: 2025/02/22 12:13:15 by fvon-de          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void		ft_free(t_list **lst);
 int			is_sorted(t_list *stack_a);
 int			is_duplicate(t_list *a);
 //Error utils
-void		print_exit(char *message, int mode);
+
 // Sorter
 void		ft_sort(t_list **stack_a);
 void		ft_sort_big(t_list **stack_a, t_list **stack_b);

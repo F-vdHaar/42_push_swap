@@ -6,7 +6,7 @@
 /*   By: fvon-de <fvon-der@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 01:54:01 by fvon-de           #+#    #+#             */
-/*   Updated: 2025/02/22 11:42:19 by fvon-de          ###   ########.fr       */
+/*   Updated: 2025/02/22 13:38:29 by fvon-de          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ void	list_args(char **argv, t_list **stack_a)
 	}
 }
 
-t_list *ft_lstnew_int(int value)
+t_list	*ft_lstnew_int(int value)
 {
-	t_list *new;
-	int *content;
+	t_list	*new;
+	int		*content;
 
 	new = malloc(sizeof(t_list));
 	if (!new)

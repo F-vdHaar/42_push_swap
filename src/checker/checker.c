@@ -6,7 +6,7 @@
 /*   By: fvon-de <fvon-der@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 21:47:20 by fvon-der          #+#    #+#             */
-/*   Updated: 2025/02/22 13:30:57 by fvon-de          ###   ########.fr       */
+/*   Updated: 2025/02/22 13:36:52 by fvon-de          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ char	*ft_command_exec(t_list **a, t_list **b, char *line)
 	{
 		ft_printf("KO");
 		return (NULL);
-		
 	}
 	return (get_next_line(0));
 }
@@ -60,7 +59,7 @@ void	ft_ps_operation_validity(t_list **a, t_list **b, char *line)
 		tmp = line;
 		line = ft_command_exec(a, b, line);
 		free(tmp);
-		if(!line)
+		if (!line)
 			return ;
 	}
 	if (*b)

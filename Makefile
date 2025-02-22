@@ -6,7 +6,7 @@
 #    By: fvon-de <fvon-der@student.42heilbronn.d    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/27 22:07:42 by fvon-der          #+#    #+#              #
-#    Updated: 2025/02/22 12:58:27 by fvon-de          ###   ########.fr        #
+#    Updated: 2025/02/22 13:35:09 by fvon-de          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,6 @@ SRC         = $(SRC_DIR)/main.c \
 			$(SRC_DIR)/list_validation.c \
 			$(SRC_DIR)/list_utils.c \
 			$(SRC_DIR)/list_utils_add.c \
-			$(SRC_DIR)/utils_error.c \
 			$(SRC_DIR)/calc_steps.c \
 			$(SRC_DIR)/calc_steps_add.c \
 			$(SRC_DIR)/finder.c \
@@ -72,7 +71,7 @@ LEAKS_FILE  = valgrind-out.txt
 LF          = --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=$(LEAKS_FILE) ./$(NAME) one 
 
 # Targets
-all: | $(OBJ_DIR) $(NAME)
+all: bonus | $(OBJ_DIR) $(NAME)
 bonus: | $(OBJ_BONUS_DIR) $(OBJ_DIR) $(BONUS)
 debug: CFLAGS += -g
 debug: re
