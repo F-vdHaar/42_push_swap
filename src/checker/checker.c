@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fvon-der <fvon-der@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: fvon-de <fvon-der@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 21:47:20 by fvon-der          #+#    #+#             */
-/*   Updated: 2024/08/10 09:52:37 by fvon-der         ###   ########.fr       */
+/*   Updated: 2025/02/22 13:30:57 by fvon-de          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,11 @@ char	*ft_command_exec(t_list **a, t_list **b, char *line)
 	else if (line[0] == 'r' && line[1] == 'r' && line[3] == '\n')
 		ft_command_add(a, b, line);
 	else
-		print_exit("KO", 0);
+	{
+		ft_printf("KO");
+		return (NULL);
+		
+	}
 	return (get_next_line(0));
 }
 
@@ -56,6 +60,8 @@ void	ft_ps_operation_validity(t_list **a, t_list **b, char *line)
 		tmp = line;
 		line = ft_command_exec(a, b, line);
 		free(tmp);
+		if(!line)
+			return ;
 	}
 	if (*b)
 		ft_printf("KO\n");
@@ -77,7 +83,8 @@ int	main(int argc, char **argv)
 	if (!a || is_duplicate(a))
 	{
 		ft_free (&a);
-		print_exit("Error Duplicates  |  checker", 1);
+		ft_printf("Error Duplicates  |  checker\n");
+		exit(EXIT_SUCCESS);
 	}
 	line = get_next_line(0);
 	if (!line && !is_sorted(a))
