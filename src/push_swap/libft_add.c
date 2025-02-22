@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   libft_add.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fvon-der <fvon-der@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fvon-de <fvon-der@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 20:23:56 by fvon-der          #+#    #+#             */
-/*   Updated: 2025/01/07 17:38:11 by fvon-der         ###   ########.fr       */
+/*   Updated: 2025/02/22 12:47:53 by fvon-de          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "push_swap.h"
 
 int	ft_issign(int c)
 {

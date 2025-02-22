@@ -3,26 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   list_utils_add.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fvon-der <fvon-der@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fvon-de <fvon-der@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 22:18:27 by fvon-der          #+#    #+#             */
-/*   Updated: 2025/01/07 13:03:58 by fvon-der         ###   ########.fr       */
+/*   Updated: 2025/02/22 12:48:00 by fvon-de          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "push_swap.h"
 
-void	ft_free(t_list **lst)
+void ft_free(t_list **lst)
 {
-	t_list	*tmp;
+    t_list *current;
+    t_list *next;
 
-	if (!lst)
-		return ;
-	while (*lst)
-	{
-		tmp = (*lst)->next;
-		(*lst)->content = 0;
-		free(*lst);
-		*lst = tmp;
-	}
+    if (!lst || !*lst)
+        return;
+    current = *lst;
+    while (current)
+    {
+        next = current->next;
+        if (current->content) // Free the int *content
+            free(current->content);
+        free(current); // Free the node itself
+        current = next;
+    }
+    *lst = NULL;
 }

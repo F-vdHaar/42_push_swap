@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   rotation_func.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fvon-der <fvon-der@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fvon-de <fvon-der@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 14:53:10 by fvon-der          #+#    #+#             */
-/*   Updated: 2025/01/07 14:53:12 by fvon-der         ###   ########.fr       */
+/*   Updated: 2025/02/22 12:48:31 by fvon-de          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "push_swap.h"
 
 int	ft_exec_rarb(t_list **a, t_list **b, int c, char s)
 {

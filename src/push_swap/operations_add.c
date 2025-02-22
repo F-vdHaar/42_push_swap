@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   operations_add.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fvon-der <fvon-der@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fvon-de <fvon-der@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 14:53:49 by fvon-der          #+#    #+#             */
-/*   Updated: 2025/01/07 14:53:50 by fvon-der         ###   ########.fr       */
+/*   Updated: 2025/02/22 12:48:17 by fvon-de          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "push_swap.h"
 
 void	ft_rr(t_list **a, t_list **b, int j)
 {

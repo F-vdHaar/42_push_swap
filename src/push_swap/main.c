@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fvon-der <fvon-der@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fvon-de <fvon-der@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 19:49:37 by fvon-der          #+#    #+#             */
-/*   Updated: 2025/01/07 14:18:32 by fvon-der         ###   ########.fr       */
+/*   Updated: 2025/02/22 12:53:12 by fvon-de          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "push_swap.h"
 
 int	main(int argc, char **argv)
 {
@@ -20,12 +20,14 @@ int	main(int argc, char **argv)
 	if (!a)
 	{
 		ft_free(&a);
-		print_exit("Allocation failed, main", 1);
+		ft_printf("Allocation failed, [main]");
+		return (EXIT_FAILURE);
 	}
 	if (is_duplicate(a))
 	{
 		ft_free(&a);
-		print_exit("Duplicates", 1);
+		ft_printf("Duplicates");
+		return (0);
 	}
 	if (!is_sorted(a))
 		ft_sort(&a);

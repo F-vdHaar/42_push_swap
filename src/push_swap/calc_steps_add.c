@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   calc_steps_add.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fvon-der <fvon-der@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: fvon-de <fvon-der@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 22:46:41 by fvon-der          #+#    #+#             */
-/*   Updated: 2024/08/07 04:42:47 by fvon-der         ###   ########.fr       */
+/*   Updated: 2025/02/22 12:47:23 by fvon-de          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "push_swap.h"
 
 int	ft_calc_rarb(t_list *a, t_list *b, int c)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   sorter.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fvon-der <fvon-der@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fvon-de <fvon-der@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 14:22:37 by fvon-der          #+#    #+#             */
-/*   Updated: 2025/01/07 14:30:01 by fvon-der         ###   ########.fr       */
+/*   Updated: 2025/02/22 12:48:40 by fvon-de          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "push_swap.h"
 
 static t_list	**ft_sort_a(t_list **stack_a, t_list **stack_b);
 static t_list	*ft_sort_b(t_list **stack_a);
