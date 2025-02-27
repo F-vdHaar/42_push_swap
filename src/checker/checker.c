@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fvon-de <fvon-der@student.42heilbronn.d    +#+  +:+       +#+        */
+/*   By: fvon-der <fvon-der@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 21:47:20 by fvon-der          #+#    #+#             */
-/*   Updated: 2025/02/22 13:36:52 by fvon-de          ###   ########.fr       */
+/*   Updated: 2025/02/27 02:55:54 by fvon-der         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	*ft_command_exec(t_list **a, t_list **b, char *line)
 		ft_command_add(a, b, line);
 	else
 	{
-		ft_printf("KO");
+		ft_printf("KO\n");
 		return (NULL);
 	}
 	return (get_next_line(0));
@@ -82,7 +82,7 @@ int	main(int argc, char **argv)
 	if (!a || is_duplicate(a))
 	{
 		ft_free (&a);
-		ft_printf("Error Duplicates  |  checker\n");
+		ft_printf("Error\n");
 		exit(EXIT_SUCCESS);
 	}
 	line = get_next_line(0);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fvon-de <fvon-der@student.42heilbronn.d    +#+  +:+       +#+        */
+/*   By: fvon-der <fvon-der@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 19:49:37 by fvon-der          #+#    #+#             */
-/*   Updated: 2025/02/22 12:53:12 by fvon-de          ###   ########.fr       */
+/*   Updated: 2025/02/27 02:23:54 by fvon-der         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 	if (is_duplicate(a))
 	{
 		ft_free(&a);
-		ft_printf("Duplicates");
+		ft_printf("Error\n");
 		return (0);
 	}
 	if (!is_sorted(a))

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fvon-de <fvon-der@student.42heilbronn.d    +#+  +:+       +#+        */
+/*   By: fvon-der <fvon-der@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 01:53:07 by fvon-de           #+#    #+#             */
-/*   Updated: 2025/02/22 13:41:48 by fvon-de          ###   ########.fr       */
+/*   Updated: 2025/02/27 02:26:25 by fvon-der         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ static t_list	*ft_sub_process(char **argv)
 	tmp = ft_split(argv[1], 32);
 	while (tmp[i])
 	{
-		if (!is_valid_integer(argv[i]))
+		if (!is_valid_integer(tmp[i]))
 		{
-			ft_printf("Error: Input not valid Integer");
+			ft_printf("Error");
 			ft_freestr(tmp);
 			free(tmp);
 			return (NULL);
@@ -71,7 +71,7 @@ static t_list	*process_arg(t_list **a, char *arg)
 	if (!is_valid_integer(arg))
 	{
 		ft_free(a);
-		ft_printf("Error: Invalid integer: %s\n", arg);
+		ft_printf("Error\n");
 		return (NULL);
 	}
 	val = ft_atoi(arg);
