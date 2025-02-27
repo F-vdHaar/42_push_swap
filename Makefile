@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fvon-de <fvon-der@student.42heilbronn.d    +#+  +:+       +#+         #
+#    By: fvon-der <fvon-der@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/27 22:07:42 by fvon-der          #+#    #+#              #
-#    Updated: 2025/02/22 13:35:09 by fvon-de          ###   ########.fr        #
+#    Updated: 2025/02/27 03:12:24 by fvon-der         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ CC          = cc
 RM          = rm -f
 FLAGS       = -Wall -Wextra -Werror
 MAKE        = make
+GIT         = git
 
 # Colors
 RED         = \033[1;31m
@@ -35,6 +36,9 @@ SRC_DIR     = src/push_swap
 SRC_BONUS_DIR = src/checker
 LIB42_DIR   = lib/lib42
 INCLUDE_DIR = include
+
+# Lib42 GitHub repository
+LIB42_REPO  = https://github.com/F-vdHaar/42_lib.git
 
 # Include paths for libraries and headers
 INCLUDE     = -I$(INCLUDE_DIR) -I$(LIB42_DIR)/libft/include -I$(LIB42_DIR)/ft_printf/include -I$(LIB42_DIR)/gnl/include 
@@ -88,6 +92,10 @@ $(OBJ_BONUS_DIR):
 # Ensure lib42 is built if it doesn't exist
 $(LIB42_DIR)/lib42.a:
 	@echo "$(CYAN)Checking for lib42 library...$(RESET)"
+	@if [ ! -d "$(LIB42_DIR)" ]; then \
+		echo "$(YELLOW)Cloning lib42 from GitHub...$(RESET)"; \
+		$(GIT) clone $(LIB42_REPO) $(LIB42_DIR); \
+	fi
 	@$(MAKE) -C $(LIB42_DIR)
 
 # Build object files for main project
